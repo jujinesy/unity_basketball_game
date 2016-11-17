@@ -44,22 +44,24 @@ public class scoreScript : MonoBehaviour {
 	
 	void newBall(){
 		down = false;
-		if (ball >= limit || balls == 0) {
+//		if (ball >= limit || balls == 0) {
+//			end_it = true;
+//			return;	
+//		}
+//		else
+//			end_it = false;
+//				
+		//ball++;
+		if(balls == 0){
 			end_it = true;
-			return;	
-		}
-		else
-			end_it = false;
-				
-		ball++;
-		if(ball == limit){
-			lastball = (GameObject) Instantiate(basketball, new Vector3(Random.Range(-8f, 8f), Random.Range(-3f,1.5f), -2), Quaternion.identity );
-			return;
+				return;	
+			//lastball = (GameObject) Instantiate(basketball, new Vector3(Random.Range(-8f, 8f), Random.Range(-3f,1.5f), -2), Quaternion.identity );
+			//return;
 		}
 		Instantiate(basketball, new Vector3(Random.Range(-8f, 8f), Random.Range(-3f,1.5f), -2), Quaternion.identity );
 		
-		if(ball == 1)
-			UpdateScore();
+		//if(ball == 1)
+			//UpdateScore();
 	}
 	
 	//Ball callbacks
@@ -82,19 +84,19 @@ public class scoreScript : MonoBehaviour {
 	public void Score(bool clean, bool back_wall){
 		float multi = 1.0f;
 		if(back_wall){
-			balls += 2;
+			balls += 3;
 			multi +=.5f;
 			tricks++;
 			showSprite("trick");
 		}
 		if(clean){
-			balls += 1;
+			balls += 2;
 			multi +=.25f;
 			cleans++;
 			showSprite("clean");
 		}
-		balls += 1;
-		if(balls > max_balls) balls = 10;
+		//balls += 1;
+		//if(balls > max_balls) balls = 10;
 		score += (int)Mathf.Ceil(default_score*multi) + (int)Mathf.Ceil(combo*10*multi);
 		combo++;
 		UpdateScore();

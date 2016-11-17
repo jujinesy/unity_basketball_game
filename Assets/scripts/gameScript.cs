@@ -52,6 +52,7 @@ public class gameScript : MonoBehaviour {
 			GameObject.Find("round_menu").GetComponent<roundEnd>().Set(lpoints, points, record, true, multi, mpoints, player);				
 			GameObject.Find("ChartBoostManager").GetComponent<CBads>().ShowAd("game_over");		
 		}
+
 		
 		if(balls <= 0 && new_record){
 			gameObject.GetComponent<leaderboard>().SendRecord();
@@ -186,7 +187,7 @@ public class gameScript : MonoBehaviour {
 		multi = new_record = false;
 		achvNames = new string[3];
 		points = round = combo = 0;	
-		balls = max_balls = 10;	
+		balls = max_balls = 2;	
 		
 	}
 	

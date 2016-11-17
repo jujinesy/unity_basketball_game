@@ -45,8 +45,8 @@ public class showScore : MonoBehaviour {
 		GUI.skin.box.alignment = TextAnchor.MiddleLeft;
 		if(multi) GUI.Box(new Rect(290-90-1 ,5, 90, 30), "Player "+player);		
 		
-		GUI.Box(new Rect(290 ,5, 90, 30), "Round:  "+round);		
-		GUI.Box(new Rect(290+90+1 ,5, 90, 30), "Ball:  "+ball);		
+		//GUI.Box(new Rect(290 ,5, 90, 30), "Round:  "+round);		
+		//GUI.Box(new Rect(290+90+1 ,5, 90, 30), "Ball:  "+ball);		
 		
 		if(achv)
 			GUI.Box(new Rect(10, 50, 140, 30), "Achivment get");	
@@ -56,12 +56,12 @@ public class showScore : MonoBehaviour {
 			GUI.Box(new Rect(510 ,5, 140, 30), "Score:  "+tempscore);
 		}
 		else
-			GUI.Box(new Rect(510 ,5, 140, 30), "Score:  "+score);
+			GUI.Box(new Rect(510 ,5, 140, 30), "현재점수:  "+score);
 		
 		if(multi && player == 2)
 			GUI.Box(new Rect(510+140+1 ,5, 140, 30), "Player1:  "+mpoints[0]);		
 		else
-			GUI.Box(new Rect(510+140+1 ,5, 140, 30), "Record:  "+record);
+			GUI.Box(new Rect(510+140+1 ,5, 140, 30), "최고기록:  "+record);
 			
 			
 	}

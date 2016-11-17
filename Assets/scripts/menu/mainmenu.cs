@@ -79,19 +79,22 @@ public class mainmenu : MonoBehaviour {
 			AutoFade.LoadLevel(2,0.5f,0.5f,Color.black);
 		}
 		
-		if(GUI.Button(new Rect(xcenter, ycenter+1*(height/2+Yoffset), 168, height), "Options")){
+		if(GUI.Button(new Rect(xcenter, ycenter+1*(height/2+Yoffset), 168, height), "Shop")){
 			options = true;
 		}
-		
-		
-		if(GUI.Button(new Rect(xcenter, ycenter+2*(height/2+Yoffset), width, height), "Exit") || Input.GetKeyDown(KeyCode.Escape))
+
+		if(GUI.Button(new Rect(xcenter, ycenter+2*(height/2+Yoffset), 168, height), "Options")){
+			options = true;
+		}
+
+		if(GUI.Button(new Rect(xcenter, ycenter+3*(height/2+Yoffset), width, height), "Exit") || Input.GetKeyDown(KeyCode.Escape))
 			Application.Quit();
 		
 		GUI.skin.label.alignment = TextAnchor.UpperLeft;
 		GUI.skin.label.fontSize = 18;
 		string Copyright = "\u00A9";
-		GUI.Label(new Rect(0, 450, 500, 40), "Game by Dusan Stojadinovic");
-		GUI.Label(new Rect(600, 450, 500, 60), "v1.4b "+Copyright+" skakac.com");
+		GUI.Label(new Rect(0, 450, 500, 40), "Game by jujine");
+		GUI.Label(new Rect(500, 450, 500, 60), "v1.0 "+Copyright+" https://jujinesy.github.io/blog");
 	
 	}
 	void Options(){
