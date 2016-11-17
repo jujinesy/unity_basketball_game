@@ -104,7 +104,7 @@ public class roundEnd : MonoBehaviour
 	{			
 		AutoResize(800, 480);	
 		GUI.skin = newSkin;					
-		Screen.showCursor = true;	
+		Cursor.visible = true;	
 		thePauseMenu();		
 	}	
 		

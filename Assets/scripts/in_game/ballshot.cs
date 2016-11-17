@@ -32,12 +32,12 @@ public class ballshot : MonoBehaviour
 		if(dots < 5)
 			dots = 5;
 		Dots = GameObject.Find("dots");
-		transform.rigidbody2D.isKinematic = true;
-		transform.collider2D.enabled = false;
+		transform.GetComponent<Rigidbody2D>().isKinematic = true;
+		transform.GetComponent<Collider2D>().enabled = false;
 		startPos = transform.position;
 		ind = Dots.transform.Cast<Transform>().ToList().ConvertAll(t => t.gameObject);
 		for(int i = 0; i<dots; i++){
-			ind[i].renderer.enabled = false;
+			ind[i].GetComponent<Renderer>().enabled = false;
 		}
 	}
 
@@ -55,9 +55,9 @@ public class ballshot : MonoBehaviour
 			}
 			else if(life>0){
 				life -= Time.deltaTime;
-				Color startColor = renderer.material.GetColor("_Color");				
-				renderer.material.SetColor("_Color", new Color(startColor.r, startColor.g, startColor.b, life));
-				shadow.renderer.material.SetColor("_Color", new Color(startColor.r, startColor.g, startColor.b, life));
+				Color startColor = GetComponent<Renderer>().material.GetColor("_Color");				
+				GetComponent<Renderer>().material.SetColor("_Color", new Color(startColor.r, startColor.g, startColor.b, life));
+				shadow.GetComponent<Renderer>().material.SetColor("_Color", new Color(startColor.r, startColor.g, startColor.b, life));
 			}
 		}
 	}
@@ -89,9 +89,9 @@ public class ballshot : MonoBehaviour
 				HidePath();
 				return;
 			}
-			transform.rigidbody2D.isKinematic =  false;			
-			transform.collider2D.enabled = true;
-			transform.rigidbody2D.AddForce(GetForce(Input.mousePosition));		
+			transform.GetComponent<Rigidbody2D>().isKinematic =  false;			
+			transform.GetComponent<Collider2D>().enabled = true;
+			transform.GetComponent<Rigidbody2D>().AddForce(GetForce(Input.mousePosition));		
 			shot = true;
 			aiming = false;
 			scoreScript.Shot();
@@ -121,9 +121,9 @@ public class ballshot : MonoBehaviour
 	//
 	//Calculate path
 	void CalculatePath(){
-		Vector2 vel = GetForce(Input.mousePosition) * Time.fixedDeltaTime / rigidbody2D.mass;
+		Vector2 vel = GetForce(Input.mousePosition) * Time.fixedDeltaTime / GetComponent<Rigidbody2D>().mass;
 		for(int i = 0; i < dots; i++){			
-			ind[i].renderer.enabled = true;
+			ind[i].GetComponent<Renderer>().enabled = true;
 			float t = i/30f;
 			Vector3 point = PathPoint(transform.position, vel, t);
 			point.z = -1.0f;
@@ -138,11 +138,11 @@ public class ballshot : MonoBehaviour
 	
 	//Hide all used dots
 	void HidePath(){
-		for(int i = 0; i<dots; i++)	ind[i].renderer.enabled = false;
+		for(int i = 0; i<dots; i++)	ind[i].GetComponent<Renderer>().enabled = false;
 	}
 	
 	//Show all used dots
 	void ShowPath(){
-		for(int i = 0; i<dots; i++) ind[i].renderer.enabled = true;
+		for(int i = 0; i<dots; i++) ind[i].GetComponent<Renderer>().enabled = true;
 	}
 }

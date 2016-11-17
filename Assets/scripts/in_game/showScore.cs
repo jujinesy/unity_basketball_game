@@ -17,9 +17,9 @@ public class showScore : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start(){
-		balls = ball = round = score = record = player = 0;
-		multi = achv = false;
-			
+		//balls = ball = round = score = record = player = 0;
+		//multi = achv = false;
+		gameObject.GetComponent<scoreScript>().UpdateScore();	
 	}
 	public void Set(int balls, int ball, int round, int score, int record, bool multi, int player, int[] mpoints){
 		this.balls = balls;

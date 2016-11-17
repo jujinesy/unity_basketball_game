@@ -35,7 +35,7 @@ public class pauseMenu : MonoBehaviour
 		{
 			Time.timeScale = 1.0f;				
 			this.enabled = false; 
-			background.renderer.enabled = false;
+			background.GetComponent<Renderer>().enabled = false;
 		}
 	
 	}
@@ -45,7 +45,7 @@ public class pauseMenu : MonoBehaviour
 		float centerx = 400;
 		float centery = 240;
 		//background 		
-		background.renderer.enabled = true;
+		background.GetComponent<Renderer>().enabled = true;
 		
 		GUI.skin.label.alignment = TextAnchor.UpperCenter;
 		GUI.skin.label.fontSize = 40;
@@ -74,7 +74,7 @@ public class pauseMenu : MonoBehaviour
 		{					
 			Time.timeScale = 1.0f;				
 			this.enabled = false; 
-			background.renderer.enabled = false;
+			background.GetComponent<Renderer>().enabled = false;
 		}	
 
 
@@ -86,7 +86,7 @@ public class pauseMenu : MonoBehaviour
 	{	
 		AutoResize(800, 480);			
 		GUI.skin = newSkin;					
-		Screen.showCursor = true;	
+		Cursor.visible = true;	
 		thePauseMenu();		
 	}	
 	

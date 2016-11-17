@@ -24,10 +24,10 @@ public class scoreScript : MonoBehaviour {
 		else if(cooldown <= 0){ newBall(); cooldown = ball_cooldown;}
 		
 		if(clean_countdown > 0) clean_countdown -= Time.fixedDeltaTime;
-		else clean_sprite.renderer.enabled = false;
+		else clean_sprite.GetComponent<Renderer>().enabled = false;
 		
 		if(trick_countdown > 0) trick_countdown -= Time.fixedDeltaTime;
-		else trick_sprite.renderer.enabled = false;
+		else trick_sprite.GetComponent<Renderer>().enabled = false;
 	}
 	
 	void Start () {
@@ -121,19 +121,19 @@ public class scoreScript : MonoBehaviour {
 		switch(sprite_name){
 			case "clean":
 				clean_sprite.transform.position = new Vector3(Random.Range(-5.8f, -4.1f), Random.Range(0f,4f), -1);
-				clean_sprite.renderer.enabled = true;
+				clean_sprite.GetComponent<Renderer>().enabled = true;
 				clean_countdown = sprite_countdown;
 				break;
 				
 			case "trick":
 				trick_sprite.transform.position = new Vector3(Random.Range(-6f, -1f), Random.Range(-2f,-3f), -1);
-				trick_sprite.renderer.enabled = true;
+				trick_sprite.GetComponent<Renderer>().enabled = true;
 				trick_countdown = sprite_countdown;
 				break;
 		}
 	}
 	
-	void UpdateScore(){
+	public void UpdateScore(){
 		showScore.Set(balls, ball, gameScript.round, gameScript.points + score, gameScript.record, gameScript.multi, gameScript.player, gameScript.mpoints);
 	}
 	

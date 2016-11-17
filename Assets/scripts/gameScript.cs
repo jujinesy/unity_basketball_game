@@ -80,14 +80,14 @@ public class gameScript : MonoBehaviour {
 	public void Sound(int id){
 		if(sfx)
 			switch(id){
-				case 1: audio.PlayOneShot(net, sfxV);  break;
-				case 2: if(Random.Range(0,2) > 1) audio.PlayOneShot(rim_hit, sfxV);
-						else audio.PlayOneShot(rim_hit2, sfxV);  break;
-				case 3: if(Random.Range(0,2) > 1) audio.PlayOneShot(ground, sfxV);
-						else audio.PlayOneShot(ground2, sfxV);  break;
-				case 4: if(Random.Range(0,2) > 1) audio.PlayOneShot(ground, sfxV/2);
-						else audio.PlayOneShot(ground2, sfxV/2);  break;
-				case 5: audio.PlayOneShot(ground, sfxV);  break;
+				case 1: GetComponent<AudioSource>().PlayOneShot(net, sfxV);  break;
+				case 2: if(Random.Range(0,2) > 1) GetComponent<AudioSource>().PlayOneShot(rim_hit, sfxV);
+						else GetComponent<AudioSource>().PlayOneShot(rim_hit2, sfxV);  break;
+				case 3: if(Random.Range(0,2) > 1) GetComponent<AudioSource>().PlayOneShot(ground, sfxV);
+						else GetComponent<AudioSource>().PlayOneShot(ground2, sfxV);  break;
+				case 4: if(Random.Range(0,2) > 1) GetComponent<AudioSource>().PlayOneShot(ground, sfxV/2);
+						else GetComponent<AudioSource>().PlayOneShot(ground2, sfxV/2);  break;
+				case 5: GetComponent<AudioSource>().PlayOneShot(ground, sfxV);  break;
 		}
 		
 		
