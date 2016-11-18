@@ -116,75 +116,43 @@ public class mainmenu : MonoBehaviour {
 		}
 			
 		if(GUI.Button(new Rect(xcenter, ycenter, width, height), "100원")){
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 1;
 			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064724", "1");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 1;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}
 		}
 
 		if(GUI.Button(new Rect(xcenter, ycenter+1*(height/2+Yoffset), width, height), "1000원")){
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 10;
 			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064726", "10");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 10;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}
 		}
 
 		if(GUI.Button(new Rect(xcenter, ycenter+2*(height/2+Yoffset), width, height), "10000원")){
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 100;
 			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064728", "100");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 100;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}
 		}
 
 		if(GUI.Button(new Rect(xcenter, ycenter+3*(height/2+Yoffset), width, height), "100000원")){
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 1000;
 			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064730", "1000");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 1000;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}
 		}
 
 		if(GUI.Button(new Rect(xcenter+width*1.2f, ycenter, width, height), "500원")){
-			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064725", "5");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 5;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}			
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 5;
+			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064725", "5");		
 		}
 
 		if(GUI.Button(new Rect(xcenter+width*1.2f, ycenter+1*(height/2+Yoffset), width, height), "5000원")){
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 50;
 			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064727", "50");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 50;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}			
 		}
 
 		if(GUI.Button(new Rect(xcenter+width*1.2f, ycenter+2*(height/2+Yoffset), width, height), "50000원")){
-			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064729", "500");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 500;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}			
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 500;
+			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064729", "500");		
 		}
 
 		if(GUI.Button(new Rect(xcenter+width*1.2f, ycenter+3*(height/2+Yoffset), width, height), "300000원")){
+			GameObject.Find("gameScript").GetComponent<IapSample> ().Pay = 3000;
 			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00708234", "0910064731", "3000");
-			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 3000;
-				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
-				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
-			}			
 		}
 	}
 

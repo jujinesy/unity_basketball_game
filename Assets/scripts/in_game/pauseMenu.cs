@@ -62,7 +62,7 @@ public class pauseMenu : MonoBehaviour
 		else GUI.Label(new Rect(centerx -200 -20, centery -30 +30, 400, 50), "- Player "+(GameObject.Find("gameScript").GetComponent<gameScript>().player+1));
 		
 		
-		
+		GUI.skin.button.fontSize = 24;
 		GUI.skin.button.alignment = TextAnchor.MiddleCenter;		
 		if(GUI.Button(new Rect(centerx -150 -90, centery -20 +110, 180, 40), "Main menu") )
 		{				

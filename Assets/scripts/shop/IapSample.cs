@@ -17,7 +17,7 @@ public class IapSample : MonoBehaviour {
 	private AndroidJavaClass unityPlayerClass = null;
 	private AndroidJavaObject currentActivity = null;
 	private AndroidJavaObject iapRequestAdapter = null;
-	public bool PayDone = false;
+	public int Pay;
 
 	void Start () 
 	{
@@ -35,8 +35,8 @@ public class IapSample : MonoBehaviour {
 			// (1) 콜백을 받을 클래스 이름
 			// (2) Activity Context
 			// (3) debug 여부
-			//iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "gameScript", currentActivity, false); //Release
-			iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "gameScript", currentActivity, true); //Debug
+			iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "gameScript", currentActivity, false); //Release
+			//iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "gameScript", currentActivity, true); //Debug
 		}
 	}
 
@@ -44,7 +44,7 @@ public class IapSample : MonoBehaviour {
 	void Update () 
 	{
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Application.Quit();	
+			//Application.Quit();	
 		}
 	}
 
@@ -246,8 +246,10 @@ public class IapSample : MonoBehaviour {
 		Debug.Log (">>> " + data.ToString());
 		Debug.Log ("--------------------------------------------------------");
 
-
-		PayDone = true;
+		if (data.result.code.Equals ("0000")) {
+			GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += Pay;
+			GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
+		}
 		// Try ReceiptVerification
 		//iapRequestAdapter.Call ("verifyReceipt", "OA00679020", data.result.txid, data.result.receipt);
 	}
