@@ -96,7 +96,7 @@ public class mainmenu : MonoBehaviour {
 		GUI.skin.label.fontSize = 18;
 		string Copyright = "\u00A9";
 		GUI.Label(new Rect(0, 450, 500, 40), "Game by jujine");
-		GUI.Label(new Rect(500, 450, 500, 60), "v1.0 "+Copyright+" https://jujinesy.github.io/blog");
+		GUI.Label(new Rect(500, 450, 500, 60), "v1.0.0  "+Copyright+"  https://jujinesy.github.io/blog");
 	
 	}
 

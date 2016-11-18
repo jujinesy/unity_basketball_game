@@ -34,8 +34,8 @@ public class IapSample : MonoBehaviour {
 			// (1) 콜백을 받을 클래스 이름
 			// (2) Activity Context
 			// (3) debug 여부
-			//iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "IapSample", currentActivity, false); //Release
-			iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "IapSample", currentActivity, true); //Debug
+			//iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "gameScript", currentActivity, false); //Release
+			iapRequestAdapter = new AndroidJavaObject("com.onestore.iap.unity.RequestAdapter", "gameScript", currentActivity, true); //Debug
 		}
 	}
 
