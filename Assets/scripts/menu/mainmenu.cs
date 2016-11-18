@@ -6,7 +6,7 @@ public class mainmenu : MonoBehaviour {
 	float xcenter = 316f, ycenter = 216f, cooldown = 3f;
 	
 	string username, tempname = "Insert name";
-	bool options = false, saves = false, name_select = false, top10 = false;
+	bool options = false, shop = false, saves = false, name_select = false, top10 = false;
 	
 	string[] score_names = new string[10];	
 	double[] score_points = new double[10];	
@@ -41,6 +41,8 @@ public class mainmenu : MonoBehaviour {
 			NewName();
 		else if(saves)
 			Saves();
+		else if(shop)
+			Shop();
 		else if(options)
 			Options();
 		else if(top10)
@@ -80,7 +82,7 @@ public class mainmenu : MonoBehaviour {
 		}
 		
 		if(GUI.Button(new Rect(xcenter, ycenter+1*(height/2+Yoffset), 168, height), "Shop")){
-			options = true;
+			shop = true;
 		}
 
 		if(GUI.Button(new Rect(xcenter, ycenter+2*(height/2+Yoffset), 168, height), "Options")){
@@ -97,6 +99,21 @@ public class mainmenu : MonoBehaviour {
 		GUI.Label(new Rect(500, 450, 500, 60), "v1.0 "+Copyright+" https://jujinesy.github.io/blog");
 	
 	}
+
+	/// <summary>
+	/// ////////////////////////////////////////////////////////
+	/// </summary>
+	void Shop(){
+		if(GUI.Button(new Rect(xcenter-width/1.5f, ycenter, width/2, height), "Back")){
+			shop = false;
+		}
+
+		if(GUI.Button(new Rect(xcenter, ycenter, width, height), "100원")){
+			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet();
+		}
+	}
+
+
 	void Options(){
 		string sfx = GameObject.Find("gameScript").GetComponent<gameScript>().sfx ? "On" : "Off";
 		string power = GameObject.Find("gameScript").GetComponent<gameScript>().power ? "x1.5" : "x1";

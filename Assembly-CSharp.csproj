@@ -60,6 +60,10 @@
      <Compile Include="Assets\scripts\leaderboards\leaderboard.cs" />
      <Compile Include="Assets\scripts\loading_txt.cs" />
      <Compile Include="Assets\scripts\menu\mainmenu.cs" />
+     <Compile Include="Assets\scripts\shop\Error.cs" />
+     <Compile Include="Assets\scripts\shop\IapSample.cs" />
+     <Compile Include="Assets\scripts\shop\Response.cs" />
+     <Compile Include="Assets\scripts\shop\VerifyReceipt.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\res\values\strings.xml" />
  <Reference Include="UnityEngine.Networking">
