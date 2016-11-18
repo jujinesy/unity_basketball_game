@@ -17,6 +17,7 @@ public class IapSample : MonoBehaviour {
 	private AndroidJavaClass unityPlayerClass = null;
 	private AndroidJavaObject currentActivity = null;
 	private AndroidJavaObject iapRequestAdapter = null;
+	public bool PayDone = false;
 
 	void Start () 
 	{
@@ -197,7 +198,7 @@ public class IapSample : MonoBehaviour {
 	//
 	//------------------------------------------------
 
-	public void RequestPaymenet()
+	public void RequestPaymenet(string appid, string iapid, string iapname)
 	{
 		// ---------------------------------
 		// 함수 parameter 정리
@@ -210,7 +211,8 @@ public class IapSample : MonoBehaviour {
 		// (4) tId
 		// (5) bpInfo
 		// ----------------------------------
-		iapRequestAdapter.Call ("requestPayment", "OA00707484", "0910063655", "1", "TID_0123", "BPINFO_0123");
+		//iapRequestAdapter.Call ("requestPayment", "OA00707484", "0910063655", "1", "TID_0123", "BPINFO_0123");
+		iapRequestAdapter.Call ("requestPayment", appid, iapid, iapname, "TID_0123", "BPINFO_0123");
 	}
 
 	public void VerifyReceipt() 
@@ -244,8 +246,10 @@ public class IapSample : MonoBehaviour {
 		Debug.Log (">>> " + data.ToString());
 		Debug.Log ("--------------------------------------------------------");
 
+
+		PayDone = true;
 		// Try ReceiptVerification
-		iapRequestAdapter.Call ("verifyReceipt", "OA00679020", data.result.txid, data.result.receipt);
+		//iapRequestAdapter.Call ("verifyReceipt", "OA00679020", data.result.txid, data.result.receipt);
 	}
 
 	public void PaymentError(string message) 

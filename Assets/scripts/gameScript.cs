@@ -15,7 +15,11 @@ public class gameScript : MonoBehaviour {
 	public int[][] achv;
 	public int[] mpoints;
 	public double[] score_points = new double[10];
-	
+
+
+	public int cash = 0;
+
+
 	void Awake() {
 		DontDestroyOnLoad(this.gameObject);	
 		Screen.sleepTimeout = (int)SleepTimeout.NeverSleep;
@@ -126,7 +130,9 @@ public class gameScript : MonoBehaviour {
 	//
 	
 	void Load(){
-		
+		cash = PlayerPrefs.GetInt("CASH", 0);
+
+
 		record = PlayerPrefs.GetInt("totalRecord", 0);
 		gameObject.GetComponent<aManager>().GetAchivments();
 		achv = gameObject.GetComponent<aManager>().achivments;
@@ -142,8 +148,10 @@ public class gameScript : MonoBehaviour {
 		username = PlayerPrefs.GetString("name", "player");
 	}
 	
-	void Save(){
-		
+	public void Save(){
+		PlayerPrefs.SetInt("CASH", cash);
+
+
 		achv = gameObject.GetComponent<aManager>().achivments;
 		PlayerPrefs.SetInt("totalRecord", record);
 		

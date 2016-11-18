@@ -36,6 +36,7 @@ public class mainmenu : MonoBehaviour {
 		
 		GUI.skin = newSkin;
 		GUI.skin.button.fontSize = 24;
+		GUI.Box(new Rect(510-140-1 ,5, 140, 30), "CASH : "+ GameObject.Find ("gameScript").GetComponent<gameScript> ().cash);
 		
 		if(name_select)
 			NewName();
@@ -104,12 +105,20 @@ public class mainmenu : MonoBehaviour {
 	/// ////////////////////////////////////////////////////////
 	/// </summary>
 	void Shop(){
+		GUI.Label(new Rect(0, 122, 500, 40), "100원당  1  CASH 이며, 점수와 볼 갯수가 올라 갑니다.");
+
+
 		if(GUI.Button(new Rect(xcenter-width/1.5f, ycenter, width/2, height), "Back")){
 			shop = false;
 		}
-
+			
 		if(GUI.Button(new Rect(xcenter, ycenter, width, height), "100원")){
-			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet();
+			GameObject.Find("gameScript").GetComponent<IapSample>().RequestPaymenet("OA00707484", "0910063655", "1");
+			if (GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone) {
+				GameObject.Find ("gameScript").GetComponent<gameScript> ().cash += 1;
+				GameObject.Find ("gameScript").GetComponent<gameScript> ().Save ();
+				GameObject.Find ("gameScript").GetComponent<IapSample> ().PayDone = false;
+			}
 		}
 	}
 

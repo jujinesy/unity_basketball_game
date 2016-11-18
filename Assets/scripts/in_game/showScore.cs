@@ -46,7 +46,9 @@ public class showScore : MonoBehaviour {
 		if(multi) GUI.Box(new Rect(290-90-1 ,5, 90, 30), "Player "+player);		
 		
 		//GUI.Box(new Rect(290 ,5, 90, 30), "Round:  "+round);		
-		//GUI.Box(new Rect(290+90+1 ,5, 90, 30), "Ball:  "+ball);		
+		//GUI.Box(new Rect(290+90+1 ,5, 90, 30), "Ball:  "+ball);	
+
+		GUI.Box(new Rect(510-140-1 ,5, 140, 30), "CASH : "+ GameObject.Find ("gameScript").GetComponent<gameScript> ().cash);	
 		
 		if(achv)
 			GUI.Box(new Rect(10, 50, 140, 30), "Achivment get");	
