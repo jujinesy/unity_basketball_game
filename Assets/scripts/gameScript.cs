@@ -195,7 +195,7 @@ public class gameScript : MonoBehaviour {
 		multi = new_record = false;
 		achvNames = new string[3];
 		points = round = combo = 0;	
-		balls = max_balls = 2;	
+		balls = max_balls = 10;	
 		
 	}
 	
