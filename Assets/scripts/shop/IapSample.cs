@@ -198,7 +198,7 @@ public class IapSample : MonoBehaviour {
 	//
 	//------------------------------------------------
 
-	public void RequestPaymenet(string appid, string iapid, string iapname)
+	public void RequestPaymenet(string appid, string iapid, string iapname, string afterview)
 	{
 		// ---------------------------------
 		// 함수 parameter 정리
@@ -212,7 +212,7 @@ public class IapSample : MonoBehaviour {
 		// (5) bpInfo
 		// ----------------------------------
 		//iapRequestAdapter.Call ("requestPayment", "OA00707484", "0910063655", "1", "TID_0123", "BPINFO_0123");
-		iapRequestAdapter.Call ("requestPayment", appid, iapid, iapname, "TID_0123", "BPINFO_0123");
+		iapRequestAdapter.Call ("requestPayment", appid, iapid, iapname, afterview, "BPINFO_0123");
 	}
 
 	public void VerifyReceipt() 

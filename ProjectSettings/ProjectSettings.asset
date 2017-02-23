@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: gone software
-  productName: "2016 No.1 \uC29B\uD130(\uC2F1\uAE00)"
+  productName: "2017 No.1 \uC29B\uD130(\uC2F1\uAE00)"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -94,7 +94,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 0
-  bundleIdentifier: com.wakira.no1shooter_s_2016
+  bundleIdentifier: com.wakira.no1shooter_s_2017
   bundleVersion: 1.0.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0

@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F746EBD2-8D0A-47A9-D1AF-8FC7851D0971}") = "unity_basketball_game", "Assembly-CSharp-firstpass.csproj", "{455713CF-1545-3E67-81B0-DE1061833F74}"
+EndProject
+Project("{F746EBD2-8D0A-47A9-D1AF-8FC7851D0971}") = "unity_basketball_game", "Assembly-CSharp.csproj", "{FDC7331C-5AC9-87AA-FE11-ACDA0AA40500}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{455713CF-1545-3E67-81B0-DE1061833F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455713CF-1545-3E67-81B0-DE1061833F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455713CF-1545-3E67-81B0-DE1061833F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455713CF-1545-3E67-81B0-DE1061833F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC7331C-5AC9-87AA-FE11-ACDA0AA40500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC7331C-5AC9-87AA-FE11-ACDA0AA40500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC7331C-5AC9-87AA-FE11-ACDA0AA40500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC7331C-5AC9-87AA-FE11-ACDA0AA40500}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
